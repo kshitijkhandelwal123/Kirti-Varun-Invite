@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wedding Invitation</title>
+<meta name="theme-color" content="#4d0f22">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Great+Vibes&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="details.js"></script>
+</head>
+<body class="locked">
+
+<div id="env" aria-label="Tap the seal to open the invitation">
+  <div class="cover-bg" id="coverBg"></div>
+  <div class="seal" id="seal">
+    <svg viewBox="0 0 200 200"><defs><radialGradient id="wx" cx="35%" cy="30%"><stop offset="0" stop-color="#f6e7c4"/><stop offset=".6" stop-color="#e2c68a"/><stop offset="1" stop-color="#b98f4a"/></radialGradient></defs>
+      <path fill="url(#wx)" d="M100 6c14 0 20 12 33 14s27 4 33 16 2 24 8 36 16 20 12 33-18 17-24 28-4 27-17 33-24-3-36 3-19 19-33 17-21-14-33-20-27-3-33-16 3-24-3-36S2 112 6 99s17-18 22-30 2-27 15-33 24 4 36-2 7-28 21-28z"/>
+      <circle cx="100" cy="100" r="64" fill="none" stroke="#a97c33" stroke-width="2" opacity=".5"/>
+      <circle cx="100" cy="100" r="58" fill="none" stroke="#fff6dc" stroke-width="1" opacity=".6"/></svg>
+    <span id="mono"></span>
+  </div>
+  <div class="tap"><i></i>Tap on seal to open the invitation<i></i></div>
+</div>
+<canvas id="fx"></canvas>
+<div id="petals"></div>
+<button id="musicBtn" aria-label="Toggle music">♪</button>
+
+<main>
+<section id="hero" class="paper first">
+  <div class="arch">
+    <img class="garland" src="images/garland.png" alt="">
+    <div class="in">
+      <div class="blessing" id="blessing"></div>
+      <div class="ganesh" aria-hidden="true"><i></i><img src="images/ganesh.png" alt=""><i></i></div>
+      <p class="tag" id="tag"></p>
+      <p class="small" id="invite"></p>
+      <div class="photo" id="coupleWrap" hidden><img id="couplePhoto" alt="The couple"></div>
+      <div class="name" id="groom"></div>
+      <p class="parents" id="gp"></p>
+      <div class="with"><i></i><span>&amp;</span><i></i></div>
+      <div class="name" id="bride"></div>
+      <p class="parents" id="bp"></p>
+    </div>
+  </div>
+</section>
+
+<section id="date" class="paper">
+  <div class="eyebrow">Save the date</div>
+  <h2>For the Wedding Celebration</h2>
+  <div class="sdate" id="sdate" role="button" tabindex="0" aria-label="Tap to reveal the date">
+    <div class="hearts">
+      <div class="heart"><svg viewBox="0 0 100 90"><path d="M50 84C20 60 4 44 4 26 4 12 15 4 27 4c10 0 18 6 23 14C55 10 63 4 73 4c12 0 23 8 23 22 0 18-16 34-46 58z"/></svg><span id="dDay"></span></div>
+      <div class="heart"><svg viewBox="0 0 100 90"><path d="M50 84C20 60 4 44 4 26 4 12 15 4 27 4c10 0 18 6 23 14C55 10 63 4 73 4c12 0 23 8 23 22 0 18-16 34-46 58z"/></svg><span id="dMon"></span></div>
+      <div class="heart"><svg viewBox="0 0 100 90"><path d="M50 84C20 60 4 44 4 26 4 12 15 4 27 4c10 0 18 6 23 14C55 10 63 4 73 4c12 0 23 8 23 22 0 18-16 34-46 58z"/></svg><span id="dYr"></span></div>
+    </div>
+    <canvas id="scr" aria-hidden="true"></canvas>
+  </div>
+  <div class="divider">✦</div>
+  <h2>The wedding begins in</h2>
+  <div class="cd">
+    <div><b id="cdD">00</b><small>Days</small></div><div><b id="cdH">00</b><small>Hours</small></div>
+    <div><b id="cdM">00</b><small>Minutes</small></div><div><b id="cdS">00</b><small>Seconds</small></div>
+  </div>
+  <div class="mu">
+    <svg class="diya" viewBox="0 0 80 52" aria-hidden="true"><defs><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe9b4"/><stop offset="1" stop-color="#cfa14e"/></linearGradient></defs>
+      <path d="M40 2c7 9 11 15 11 21a11 11 0 0 1-22 0c0-6 4-12 11-21z" fill="url(#gd)"/><path d="M40 14c3 5 5 8 5 11a5 5 0 0 1-10 0c0-3 2-6 5-11z" fill="#8f2b4c" opacity=".55"/>
+      <path d="M6 34h68c0 10-12 16-34 16S6 44 6 34z" fill="url(#gd)"/><path d="M12 34h56" stroke="#8f2b4c" stroke-width="1.4" opacity=".5"/></svg>
+    <div class="mu-t" id="muT"></div>
+    <div class="mu-lab" id="muLab"></div>
+    <div class="mu-time" id="muTime"></div>
+    <div class="mu-line"><i></i><b>✦</b><i></i></div>
+    <p id="muX"></p>
+  </div>
+  </section>
+
+<section id="events" class="paper">
+  <div class="eyebrow" id="evEyebrow"></div>
+  <h2>Schedule of Events</h2>
+  <div class="divider">✦</div>
+  <div class="tl" id="tl"></div>
+</section>
+
+<section id="venue" class="plain">
+  <p class="vnote" id="vNote"></p>
+  <h2>We're celebrating at</h2>
+  <div class="vimg" id="vimgWrap"><img id="vimg" alt="Venue"></div>
+  <div class="vname" id="vName"></div>
+  <p class="vaddr" id="vAddr"></p>
+  <div class="row"><a class="btn fill sq" id="mapBtn" target="_blank" rel="noopener">◉ Find your way ↗</a></div>
+  <p class="vcity" id="vCity"></p>
+</section>
+
+<section id="gallery" class="paper" hidden>
+  <div class="eyebrow">Moments</div><h2>Our Story</h2><div class="gal" id="gal"></div>
+</section>
+
+<section id="dress" class="paper vined">
+  <img class="vines" src="images/vines.png" alt="">
+  <div class="eyebrow big"><span>✦</span> <span id="dEyebrow"></span> <span>✦</span></div>
+  <h2 id="dTitle"></h2>
+  <div class="divider">✦</div>
+  <img class="rack" id="rack" alt="" hidden>
+  <div class="looks" id="dressList"></div>
+</section>
+
+<section id="rsvp" class="paper">
+  <h2>RSVP</h2>
+  <div class="divider">✦</div>
+  <form id="form" autocomplete="off">
+    <label class="l" for="gName">Your name</label>
+    <input type="text" id="gName" placeholder="Full name">
+    <div class="seg">
+      <label><input type="radio" name="att" value="yes" checked><span>Yes, I'll be there</span></label>
+      <label><input type="radio" name="att" value="no"><span>Sorry, can't make it</span></label>
+    </div>
+    <label class="l" for="msg">A message for the couple (optional)</label>
+    <textarea id="msg" rows="3" placeholder="Your blessings & wishes…"></textarea>
+    <a class="btn" id="send" target="_blank" rel="noopener" href="#rsvp">Send reply on WhatsApp</a>
+    <p class="rsvpnote">Kindly reply by <span id="rsvpBy"></span></p>
+  </form>
+</section>
+
+<section id="closing" class="last">
+  <div class="cl-seal"><svg viewBox="0 0 200 200"><path fill="url(#wx)" d="M100 6c14 0 20 12 33 14s27 4 33 16 2 24 8 36 16 20 12 33-18 17-24 28-4 27-17 33-24-3-36 3-19 19-33 17-21-14-33-20-27-3-33-16 3-24-3-36S2 112 6 99s17-18 22-30 2-27 15-33 24 4 36-2 7-28 21-28z"/><circle cx="100" cy="100" r="62" fill="none" stroke="#a97c33" stroke-width="2" opacity=".5"/></svg><span id="mono2"></span></div>
+  <p class="cl-small">With hearts full of joy</p>
+  <div class="cl-names" id="clNames"></div>
+  <div class="cl-date" id="clDate"></div>
+  <div class="cl-orn"><i></i><b>✦</b><i></i></div>
+  <p class="big" id="closeTxt"></p>
+  <p class="fam" id="fam"></p>
+  <div class="cl-tag" id="clTag"></div>
+  <div class="credit">Digital invitation by The Wedding Scrippt</div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

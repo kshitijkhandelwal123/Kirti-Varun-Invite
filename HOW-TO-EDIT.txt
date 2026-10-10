@@ -1,0 +1,28 @@
+ROYAL SEAL INVITATION – HOW TO EDIT FOR A NEW COUPLE
+Everything is changed in ONE file: details.js (open in Notepad / any text editor, keep the quotes "" and commas).
+
+WHAT YOU CAN CHANGE
+ groom, bride, monogram, groomParents, brideParents, blessing, tagline, inviteLine
+ cover / coverGradient ..... cover picture (or gradient colours behind the seal)
+ couplePhoto ............... optional couple photo on the first screen ("" = none)
+ weddingDateTime ........... countdown target, e.g. "2027-02-21T19:30:00+05:30"
+ dateDay / dateMonth / dateYear, dateReveal (text on the foil), rememberReveal (true = guest taps once only)
+ events .................... add / remove / reorder lines: date, time, title, note, image, focus
+                             focus = which part of the picture shows: "top", "center", "bottom"
+ muhurat ................... title, label, time, text
+ venueName, venueAddress, venueCity, venueNote, venueImage, mapQuery (text Google Maps searches)
+ gallery ................... list of photos ["images/g1.jpg", ...] ([] = hidden)
+ dressTitle, dressEyebrow, dressCode (event, look, image; use | for a new line)
+ whatsapp .................. number with country code, no + (RSVP goes here), rsvpBy
+ closing, families, hashtag (optional), music
+ theme ..................... main / dark / gold colours (hex codes)
+ hideSections .............. e.g. ["dress","gallery"] to hide sections
+
+CHANGING PICTURES
+ Put the new picture in the images folder with the SAME file name (easiest), or change the path in details.js.
+ Event pictures: portrait, about 900 x 1100 px, JPG. Venue: wide, about 1400 x 800 px. Keep each under 300 KB.
+ Cover: tall phone shape, about 1080 x 1920.
+MUSIC: put the song at music/song.mp3. No song = no music button.
+UPLOAD: Cloudflare Pages -> Create -> Direct Upload -> upload this whole folder, then add a custom
+ domain like aditi-riya.weddingscrippt.in
+TEST on a phone: open seal, tap-to-reveal date, map button, RSVP -> WhatsApp.
