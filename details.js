@@ -55,5 +55,5 @@ window.WEDDING = {
   rsvpBy: "5 Feb 2027",
   closing: "We look forward to celebrating this beautiful beginning with you.",
   families: "With love & warmest wishes — The Khanna & Sethi Families",
-  music: "music/song.mp3"        // optional
+  music: "music/song2.mp3"        // optional
 };
